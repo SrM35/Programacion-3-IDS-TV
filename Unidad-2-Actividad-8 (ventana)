@@ -1,0 +1,79 @@
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class ventana extends JFrame{
+	public ventana() {
+		
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(500, 500);
+		
+		//Inicializar loadComponents
+		this.loadComponents();
+		
+		this.setTitle("Inicio de sesion");
+		this.setLocationRelativeTo(null);
+		this.setResizable(false);
+		this.setMinimumSize(new Dimension(300,300));
+		
+		this.setLayout(null);
+	}
+	
+	public void loadComponents() {
+		
+		//Ingresar el usuario
+		JTextField texto = new JTextField();
+		texto.setBounds(142, 160, 202, 30);
+		add(texto);
+	
+		//Ingresar la contraseña
+		JPasswordField contrasena = new JPasswordField();
+		contrasena.setBounds(142, 230, 202, 30);
+		add(contrasena);
+		
+		
+		
+		//Texto de "Usuario:"
+		JLabel title = new JLabel("Ingrese su usuario:");
+		title.setFont(new Font("Arial", Font.BOLD, 13));
+		title.setBounds(182, -5, 300, 300);
+		add(title);
+		
+		//Texto de "Contraseña:"
+		JLabel title1 = new JLabel("Ingrese la contrasena:");
+		title1.setFont(new Font("Arial", Font.BOLD, 13));
+		title1.setBounds(172, 66, 300, 300);
+		add(title1);
+		
+		//Texto de "Bienvenido Usuario"
+		JLabel welcome = new JLabel("Bienvenido/da Usuario");
+		welcome.setFont(new Font("Arial", Font.BOLD, 20));
+		welcome.setBounds(135, -85, 300, 300);
+		add(welcome);
+		
+		
+		//Boton
+		JButton login_btn = new JButton("Continuar");
+		login_btn.setBounds(153,280,180,30);
+		add(login_btn);
+		
+		
+		
+		//Color del fondo
+		JPanel login = new JPanel();
+		login.setSize(this.getWidth(),this.getHeight());
+		login.setLocation(0,0);
+		login.setBackground(Color.LIGHT_GRAY);
+		add(login);
+		login.setLayout(null);
+		
+	}
+}
