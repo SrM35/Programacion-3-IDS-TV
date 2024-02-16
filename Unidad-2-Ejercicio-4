@@ -1,0 +1,32 @@
+import java.awt.Dimension;
+import javax.swing.JFrame;
+
+public class Prueba {
+
+	public static void main(String[] args) {
+		JFrame ventana = new JFrame();
+
+		// Mostrar la ventana
+		ventana.setVisible(true);
+
+		// lo que hará a ventana al cerrarse
+		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// tamaño de la ventana
+		ventana.setSize(500, 500);
+
+		// abrir centrada la ventana
+		ventana.setLocationRelativeTo(null);
+
+		//titulo de la ventana
+		ventana.setTitle("Homero chino");
+
+		//Si se puede hacer mas grande o mas pequeña
+		ventana.setResizable(false);
+
+		//Tamaño minimo de la ventana
+		ventana.setMinimumSize(new Dimension(300, 300));
+
+	}
+
+}
