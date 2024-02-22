@@ -7,60 +7,60 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class ventana extends JFrame {
+	
+	private JMenuBar menuBar;
+	private JMenu menu;
+	private JMenuItem menuItem1, menuItem2, menuItem3;
+	
 	public ventana() {
-
+		this.setLayout(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1000, 700);
 
-		// Inicializar loadComponents
-		this.loadComponents();
-
-		this.setTitle("Bienvenido!!!");
+		this.setTitle("Bienvenido");
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setMinimumSize(new Dimension(300, 300));
+		this.loadComponents();
 
-		this.setLayout(null);
 	}
 
 	public void loadComponents() {
 		this.login();
 		this.register();
+		this.MenuVentana();
 	}
 
 	public void login() {
-		// Pasar cosas de la ventana de login
-
-		// TXT field de el usuario
+		
 		JTextField texto = new JTextField();
 		texto.setBounds(142, 160, 202, 30);
 		add(texto);
 
-		// PWD field de la contraseña
 		JPasswordField contrasena = new JPasswordField();
 		contrasena.setBounds(142, 230, 202, 30);
 		add(contrasena);
 
-		// Texto de "Usuario:"
 		JLabel title = new JLabel("Ingrese su usuario:");
 		title.setFont(new Font("Arial", Font.BOLD, 13));
 		title.setBounds(182, -5, 300, 300);
 		add(title);
 
-		// Texto de "Contraseña:"
 		JLabel title1 = new JLabel("Ingrese la contrasena:");
 		title1.setFont(new Font("Arial", Font.BOLD, 13));
 		title1.setBounds(172, 66, 300, 300);
 		add(title1);
 
-		// Texto de "Bienvenido/da Usuario"
 		JLabel welcome = new JLabel("Bienvenido/da Usuario");
 		welcome.setFont(new Font("Arial", Font.BOLD, 20));
 		welcome.setBounds(135, -85, 300, 300);
@@ -72,44 +72,36 @@ public class ventana extends JFrame {
 		
 		JPanel login = new JPanel();
 		login.setSize(this.getWidth() / 2, this.getHeight());
-		login.setLocation(0, 0);
 		login.setBackground(Color.LIGHT_GRAY);
 		add(login);
 		repaint();
 	}
 
 	public void register() {
-		// Pasar cosas de la ventana de registro
-
-		// TXT field de nombre del usuario
+		
 		JTextField ingresarNombre = new JTextField();
 		ingresarNombre.setBounds(530, 135, 300, 30);
 		add(ingresarNombre);
 
-		// PWD field de la contraseña
 		JTextField contra = new JTextField();
 		contra.setBounds(530, 210, 300, 30);
 		add(contra);
 
-		// Texto de "Registrate"
 		JLabel tituloRegistro = new JLabel("Registrate");
 		tituloRegistro.setFont(new Font("Namecat", Font.BOLD, 40));
 		tituloRegistro.setBounds(630, -85, 300, 300);
 		add(tituloRegistro);
 
-		// Texto de "Ingrese su contrasena:"
 		JLabel ingresarContra = new JLabel("Ingrese su contrasena:");
 		ingresarContra.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarContra.setBounds(530, 45, 300, 300);
 		add(ingresarContra);
 
-		// Texto de "Ingrese su nombre de usuario:"
 		JLabel ingresarUsuario = new JLabel("Ingrese su nombre de usuario:");
 		ingresarUsuario.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarUsuario.setBounds(530, -30, 300, 300);
 		add(ingresarUsuario);
-
-		// Texto de "Seleccione su sexo:"
+		
 		JLabel ingresarSexo = new JLabel("Seleccione su sexo:");
 		ingresarSexo.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarSexo.setBounds(530, 125, 300, 300);
@@ -126,11 +118,11 @@ public class ventana extends JFrame {
 		add(txt_pais);
 		
 		JButton confirm_btn = new JButton("Confirmar");
-		confirm_btn.setBounds(550, 600, 180, 30);
+		confirm_btn.setBounds(550, 580, 180, 30);
 		add(confirm_btn);
 
 		JButton cancel_btn = new JButton("Cancelar");
-		cancel_btn.setBounds(750, 600, 180, 30);
+		cancel_btn.setBounds(750, 580, 180, 30);
 		add(cancel_btn);
 		
 		String Pais[] = {"Mexico", "Estados Unidos", "Canada", "Colombia", "Venezuela"};
@@ -138,6 +130,7 @@ public class ventana extends JFrame {
 		JComboBox caja = new JComboBox(Pais);
 		caja.setBounds(650, 400, 150, 20);
 		add(caja);
+		caja.updateUI();
 		
 		JRadioButton tipoM = new JRadioButton("Masculino");
 		tipoM.setBounds(530, 285, 100, 30);
@@ -162,7 +155,24 @@ public class ventana extends JFrame {
 		add(registro);
 		repaint();
 		
-		
 	}
-}
+	
+	public void MenuVentana() {
+		menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		menu = new JMenu("Opciones");
+		
+		menuItem1 = new JMenuItem("Configuracion");
+		menu.add(menuItem1);
+		
+		menuItem2 = new JMenuItem("Ayuda");
+		menu.add(menuItem2);
+		
+		menuItem3 = new JMenuItem("Visualizacion");
+		menu.add(menuItem3);
+		
+		menuBar.add(menu);
+		menuBar.updateUI();
+	}
 }
