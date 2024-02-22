@@ -4,6 +4,7 @@ import java.awt.Font;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,139 +12,157 @@ import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class ventana extends JFrame{
+public class ventana extends JFrame {
 	public ventana() {
-		
+
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(1000, 500);
-		
-		//Inicializar loadComponents
+		this.setSize(1000, 700);
+
+		// Inicializar loadComponents
 		this.loadComponents();
-		
+
 		this.setTitle("Bienvenido!!!");
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
-		this.setMinimumSize(new Dimension(300,300));
-		
+		this.setMinimumSize(new Dimension(300, 300));
+
 		this.setLayout(null);
 	}
-	
+
 	public void loadComponents() {
-		
-		//INICIAR SESIÓN-------------------------------------------
-		
-		//TXT field de el usuario
+		this.login();
+		this.register();
+	}
+
+	public void login() {
+		// Pasar cosas de la ventana de login
+
+		// TXT field de el usuario
 		JTextField texto = new JTextField();
 		texto.setBounds(142, 160, 202, 30);
 		add(texto);
-	
-		//PWD field de la contraseña
+
+		// PWD field de la contraseña
 		JPasswordField contrasena = new JPasswordField();
 		contrasena.setBounds(142, 230, 202, 30);
 		add(contrasena);
-		
-		//Texto de "Usuario:"
+
+		// Texto de "Usuario:"
 		JLabel title = new JLabel("Ingrese su usuario:");
 		title.setFont(new Font("Arial", Font.BOLD, 13));
 		title.setBounds(182, -5, 300, 300);
 		add(title);
-		
-		//Texto de "Contraseña:"
+
+		// Texto de "Contraseña:"
 		JLabel title1 = new JLabel("Ingrese la contrasena:");
 		title1.setFont(new Font("Arial", Font.BOLD, 13));
 		title1.setBounds(172, 66, 300, 300);
 		add(title1);
-		
-		//Texto de "Bienvenido/da Usuario"
+
+		// Texto de "Bienvenido/da Usuario"
 		JLabel welcome = new JLabel("Bienvenido/da Usuario");
 		welcome.setFont(new Font("Arial", Font.BOLD, 20));
 		welcome.setBounds(135, -85, 300, 300);
 		add(welcome);
 		
+		JButton login_btn = new JButton("Continuar");
+		login_btn.setBounds(153, 280, 180, 30);
+		add(login_btn);
 		
-		//REGISTRO----------------------------------------------------
-		
-		//TXT field de nombre del usuario
+		JPanel login = new JPanel();
+		login.setSize(this.getWidth() / 2, this.getHeight());
+		login.setLocation(0, 0);
+		login.setBackground(Color.LIGHT_GRAY);
+		add(login);
+		repaint();
+	}
+
+	public void register() {
+		// Pasar cosas de la ventana de registro
+
+		// TXT field de nombre del usuario
 		JTextField ingresarNombre = new JTextField();
 		ingresarNombre.setBounds(530, 135, 300, 30);
 		add(ingresarNombre);
-		
-		//PWD field de la contraseña
+
+		// PWD field de la contraseña
 		JTextField contra = new JTextField();
 		contra.setBounds(530, 210, 300, 30);
 		add(contra);
-		
-		//Texto de "Registrate"
+
+		// Texto de "Registrate"
 		JLabel tituloRegistro = new JLabel("Registrate");
-		tituloRegistro.setFont(new Font("Arial", Font.BOLD, 20));
-		tituloRegistro.setBounds(700, -85, 300, 300);
+		tituloRegistro.setFont(new Font("Namecat", Font.BOLD, 40));
+		tituloRegistro.setBounds(630, -85, 300, 300);
 		add(tituloRegistro);
-		
-		//Texto de "Ingrese su contrasena:"
+
+		// Texto de "Ingrese su contrasena:"
 		JLabel ingresarContra = new JLabel("Ingrese su contrasena:");
-		ingresarContra.setFont(new Font("Arial", Font.BOLD, 13));
+		ingresarContra.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarContra.setBounds(530, 45, 300, 300);
 		add(ingresarContra);
-		
-		//Texto de "Ingrese su nombre de usuario:"
+
+		// Texto de "Ingrese su nombre de usuario:"
 		JLabel ingresarUsuario = new JLabel("Ingrese su nombre de usuario:");
-		ingresarUsuario.setFont(new Font("Arial", Font.BOLD, 13));
+		ingresarUsuario.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarUsuario.setBounds(530, -30, 300, 300);
 		add(ingresarUsuario);
-		
-		//Texto de "Seleccione su sexo:"
+
+		// Texto de "Seleccione su sexo:"
 		JLabel ingresarSexo = new JLabel("Seleccione su sexo:");
-		ingresarSexo.setFont(new Font("Arial", Font.BOLD, 13));
+		ingresarSexo.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarSexo.setBounds(530, 125, 300, 300);
 		add(ingresarSexo);
 		
+		JLabel direccion = new JLabel("Direccion de domicilio:");
+		direccion.setFont(new Font("Namecat", Font.ITALIC, 13));
+		direccion.setBounds(530, 215, 300, 300);
+		add(direccion);
 		
-		//Botones
-		JButton login_btn = new JButton("Continuar");
-		login_btn.setBounds(153,280,180,30);
-		add(login_btn);
+		JLabel txt_pais = new JLabel("Pais de domicilio:");
+		txt_pais.setFont(new Font("Namecat", Font.ITALIC, 13));
+		txt_pais.setBounds(530, 260, 300, 300);
+		add(txt_pais);
 		
 		JButton confirm_btn = new JButton("Confirmar");
-		confirm_btn.setBounds(550,385,180,30);
+		confirm_btn.setBounds(550, 600, 180, 30);
 		add(confirm_btn);
-		
+
 		JButton cancel_btn = new JButton("Cancelar");
-		cancel_btn.setBounds(750,385,180,30);
+		cancel_btn.setBounds(750, 600, 180, 30);
 		add(cancel_btn);
 		
+		String Pais[] = {"Mexico", "Estados Unidos", "Canada", "Colombia", "Venezuela"};
 		
-		//Botones de selección
+		JComboBox caja = new JComboBox(Pais);
+		caja.setBounds(650, 400, 150, 20);
+		add(caja);
+		
 		JRadioButton tipoM = new JRadioButton("Masculino");
 		tipoM.setBounds(530, 285, 100, 30);
+		tipoM.setFont(new Font("Namecat", Font.ITALIC, 13));
 		tipoM.setOpaque(false);
 		add(tipoM);
-		
+
 		JRadioButton tipoF = new JRadioButton("Femenino");
-		tipoF.setBounds(530, 315, 100, 30);
+		tipoF.setBounds(620, 285, 100, 30);
+		tipoF.setFont(new Font("Namecat", Font.ITALIC, 13));
 		tipoF.setOpaque(false);
 		add(tipoF);
-		
+
 		ButtonGroup grupo = new ButtonGroup();
 		grupo.add(tipoM);
 		grupo.add(tipoF);
 		
-		
-		//Paneles
-		JPanel login = new JPanel();
-		login.setSize(this.getWidth()/2,this.getHeight());
-		login.setLocation(0,0);
-		login.setBackground(Color.LIGHT_GRAY);
-		add(login);
-		repaint();
-		
 		JPanel registro = new JPanel();
-		registro.setSize(this.getWidth(),this.getHeight());
-		registro.setLocation(this.getWidth()/2,0);
-		registro.setBackground(Color.gray);
+		registro.setSize(this.getWidth(), this.getHeight());
+		registro.setLocation(this.getWidth() / 2, 0);
+		registro.setBackground(Color.decode("#FAFFA8"));
 		add(registro);
 		repaint();
 		
 		
 	}
+}
 }
