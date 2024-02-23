@@ -13,14 +13,16 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class ventana extends JFrame {
-	
+
 	private JMenuBar menuBar;
 	private JMenu menu;
 	private JMenuItem menuItem1, menuItem2, menuItem3;
-	
+
 	public ventana() {
 		this.setLayout(null);
 		this.setVisible(true);
@@ -36,13 +38,14 @@ public class ventana extends JFrame {
 	}
 
 	public void loadComponents() {
-		this.login();
-		this.register();
-		this.MenuVentana();
+		//this.login();
+		//this.register();
+		//this.MenuVentana();
+		this.admin();
 	}
 
 	public void login() {
-		
+
 		JTextField texto = new JTextField();
 		texto.setBounds(142, 160, 202, 30);
 		add(texto);
@@ -65,11 +68,11 @@ public class ventana extends JFrame {
 		welcome.setFont(new Font("Arial", Font.BOLD, 20));
 		welcome.setBounds(135, -85, 300, 300);
 		add(welcome);
-		
+
 		JButton login_btn = new JButton("Continuar");
 		login_btn.setBounds(153, 280, 180, 30);
 		add(login_btn);
-		
+
 		JPanel login = new JPanel();
 		login.setSize(this.getWidth() / 2, this.getHeight());
 		login.setBackground(Color.LIGHT_GRAY);
@@ -78,7 +81,7 @@ public class ventana extends JFrame {
 	}
 
 	public void register() {
-		
+
 		JTextField ingresarNombre = new JTextField();
 		ingresarNombre.setBounds(530, 135, 300, 30);
 		add(ingresarNombre);
@@ -101,22 +104,22 @@ public class ventana extends JFrame {
 		ingresarUsuario.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarUsuario.setBounds(530, -30, 300, 300);
 		add(ingresarUsuario);
-		
+
 		JLabel ingresarSexo = new JLabel("Seleccione su sexo:");
 		ingresarSexo.setFont(new Font("Namecat", Font.ITALIC, 13));
 		ingresarSexo.setBounds(530, 125, 300, 300);
 		add(ingresarSexo);
-		
+
 		JLabel direccion = new JLabel("Direccion de domicilio:");
 		direccion.setFont(new Font("Namecat", Font.ITALIC, 13));
 		direccion.setBounds(530, 215, 300, 300);
 		add(direccion);
-		
+
 		JLabel txt_pais = new JLabel("Pais de domicilio:");
 		txt_pais.setFont(new Font("Namecat", Font.ITALIC, 13));
 		txt_pais.setBounds(530, 260, 300, 300);
 		add(txt_pais);
-		
+
 		JButton confirm_btn = new JButton("Confirmar");
 		confirm_btn.setBounds(550, 580, 180, 30);
 		add(confirm_btn);
@@ -124,14 +127,14 @@ public class ventana extends JFrame {
 		JButton cancel_btn = new JButton("Cancelar");
 		cancel_btn.setBounds(750, 580, 180, 30);
 		add(cancel_btn);
-		
-		String Pais[] = {"Mexico", "Estados Unidos", "Canada", "Colombia", "Venezuela"};
-		
+
+		String Pais[] = { "Mexico", "Estados Unidos", "Canada", "Colombia", "Venezuela" };
+
 		JComboBox caja = new JComboBox(Pais);
 		caja.setBounds(650, 400, 150, 20);
 		add(caja);
 		caja.updateUI();
-		
+
 		JRadioButton tipoM = new JRadioButton("Masculino");
 		tipoM.setBounds(530, 285, 100, 30);
 		tipoM.setFont(new Font("Namecat", Font.ITALIC, 13));
@@ -147,32 +150,87 @@ public class ventana extends JFrame {
 		ButtonGroup grupo = new ButtonGroup();
 		grupo.add(tipoM);
 		grupo.add(tipoF);
-		
+
 		JPanel registro = new JPanel();
 		registro.setSize(this.getWidth(), this.getHeight());
 		registro.setLocation(this.getWidth() / 2, 0);
 		registro.setBackground(Color.decode("#FAFFA8"));
 		add(registro);
 		repaint();
-		
+
 	}
-	
+
 	public void MenuVentana() {
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
+
 		menu = new JMenu("Opciones");
-		
+
 		menuItem1 = new JMenuItem("Configuracion");
 		menu.add(menuItem1);
-		
+
 		menuItem2 = new JMenuItem("Ayuda");
 		menu.add(menuItem2);
-		
+
 		menuItem3 = new JMenuItem("Visualizacion");
 		menu.add(menuItem3);
-		
+
 		menuBar.add(menu);
 		menuBar.updateUI();
+	}
+	
+	public void admin() {
+		JLabel texto_Usuario = new JLabel("Usuarios",0);
+		texto_Usuario.setFont(new Font("Namecat", Font.BOLD, 40));
+		texto_Usuario.setBounds(350, 0, 300, 100);
+		add(texto_Usuario);
+		
+		JLabel cuadro = new JLabel("Usuarios disponibles: 26",0);
+		cuadro.setFont(new Font("Namecat", Font.BOLD, 20));
+		cuadro.setBounds(100, 100, 300, 100);
+		cuadro.setOpaque(true);
+		add(cuadro);
+		
+		JPanel admin = new JPanel();
+		admin.setSize(this.getWidth(), this.getHeight());
+		admin.setBackground(Color.decode("#C8FFA8"));
+		add(admin);
+		
+		String titles[] = {"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"};
+		String data[][] = {
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
+				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"}
+		};
+		
+		JTable tabla = new JTable(data, titles);
+		
+		JScrollPane scroll = new JScrollPane(tabla);
+		scroll.setBounds(100, 250, 800, 300);
+		add(scroll);
+		scroll.updateUI();
 	}
 }
