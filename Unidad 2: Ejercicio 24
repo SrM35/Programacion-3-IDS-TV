@@ -8,15 +8,16 @@ public class ventana extends JFrame {
 	private JMenuItem menuItem1, menuItem2, menuItem3;
 
 	public ventana() {
-		this.setLayout(null);
+		// this.setLayout(null);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//this.setSize(1000, 700);
-		//this.setSize(313, 550);
-		this.setSize(700,525);;
+		// this.setSize(1000, 700);
+		// this.setSize(313, 550);
+		// this.setSize(700,525);
+		this.setSize(700, 700);
 
-		//this.setTitle("Bienvenido");
-		//this.setTitle("Calculadora");
+		// this.setTitle("Bienvenido");
+		// this.setTitle("Calculadora");
 		this.setTitle("User Login");
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
@@ -27,12 +28,13 @@ public class ventana extends JFrame {
 	}
 
 	public void loadComponents() {
-		this.login_2();
-		//this.login();
-		//this.register();
-		//this.MenuVentana();
-		//this.admin();
-		//this.calculator();
+		this.calculadora_layout();
+		// this.login_2();
+		// this.login();
+		// this.register();
+		// this.MenuVentana();
+		// this.admin();
+		// this.calculator();
 	}
 
 	public void login() {
@@ -63,13 +65,15 @@ public class ventana extends JFrame {
 		JButton login_btn = new JButton("Continuar");
 		login_btn.setBounds(153, 280, 180, 30);
 		add(login_btn);
-		
-		/*JLabel imagen = new JLabel(new ImageIcon(getClass().getResource("elpepe.png")));
-		imagen.setBounds(0, 0, 600, 300);
-		add(imagen);*/
+
+		/*
+		 * JLabel imagen = new JLabel(new
+		 * ImageIcon(getClass().getResource("elpepe.png"))); imagen.setBounds(0, 0, 600,
+		 * 300); add(imagen);
+		 */
 
 		JPanel login = new JPanel();
-		login.setSize(this.getWidth()/* / 2*/, this.getHeight());
+		login.setSize(this.getWidth()/* / 2 */, this.getHeight());
 		login.setBackground(Color.LIGHT_GRAY);
 		add(login);
 		repaint();
@@ -171,223 +175,220 @@ public class ventana extends JFrame {
 
 		menuBar.add(menu);
 	}
-	
+
 	public void admin() {
-		JLabel texto_Usuario = new JLabel("Usuarios",0);
+		JLabel texto_Usuario = new JLabel("Usuarios", 0);
 		texto_Usuario.setFont(new Font("Namecat", Font.BOLD, 40));
 		texto_Usuario.setBounds(350, 0, 300, 100);
 		add(texto_Usuario);
-		
-		JLabel cuadro = new JLabel("Usuarios disponibles: 26",0);
+
+		JLabel cuadro = new JLabel("Usuarios disponibles: 26", 0);
 		cuadro.setFont(new Font("Namecat", Font.BOLD, 20));
 		cuadro.setBounds(100, 100, 300, 100);
 		cuadro.setOpaque(true);
 		add(cuadro);
-		
+
 		JPanel admin = new JPanel();
 		admin.setSize(this.getWidth(), this.getHeight());
 		admin.setBackground(Color.decode("#C8FFA8"));
 		add(admin);
-		
-		String titles[] = {"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"};
-		String data[][] = {
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"},
-				{"No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP"}
-		};
-		
+
+		String titles[] = { "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" };
+		String data[][] = { { "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" },
+				{ "No. Control", "Apellidos", "Nombres", "Correo electronico", "CURP" } };
+
 		JTable tabla = new JTable(data, titles);
-		
+
 		JScrollPane scroll = new JScrollPane(tabla);
 		scroll.setBounds(100, 250, 800, 300);
 		add(scroll);
 	}
-	
-public void calculator() {
-		
-		//1er fila
-		
+
+	public void calculator() {
+
+		// 1er fila
+
 		JButton btn_C = new JButton("C");
 		btn_C.setBackground(Color.black);
 		btn_C.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn_C.setForeground(Color.decode("#D60000"));
 		btn_C.setBounds(10, 160, 60, 60);
 		add(btn_C);
-		
+
 		JButton btn7 = new JButton("7");
 		btn7.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn7.setBounds(10, 230, 60, 60);
 		btn7.setBackground(Color.black);
 		btn7.setForeground(Color.decode("#7FFFE8"));
 		add(btn7);
-		
+
 		JButton btn4 = new JButton("4");
 		btn4.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn4.setBounds(10, 300, 60, 60);
 		btn4.setBackground(Color.black);
 		btn4.setForeground(Color.decode("#7FFFE8"));
 		add(btn4);
-		
+
 		JButton btn1 = new JButton("1");
 		btn1.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn1.setBounds(10, 370, 60, 60);
 		btn1.setBackground(Color.black);
 		btn1.setForeground(Color.decode("#7FFFE8"));
 		add(btn1);
-		
+
 		JButton btn_PlusMinus = new JButton("+/-");
 		btn_PlusMinus.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn_PlusMinus.setBounds(10, 440, 60, 60);
 		btn_PlusMinus.setBackground(Color.black);
 		btn_PlusMinus.setForeground(Color.decode("#7FFFE8"));
 		add(btn_PlusMinus);
-		
-		//2da fila
-		
+
+		// 2da fila
+
 		JButton btn_CE = new JButton("CE");
 		btn_CE.setFont(new Font("Lemon Milk", Font.BOLD, 18));
 		btn_CE.setBounds(82, 160, 60, 60);
 		btn_CE.setBackground(Color.black);
 		btn_CE.setForeground(Color.decode("#8B83FF"));
 		add(btn_CE);
-		
+
 		JButton btn8 = new JButton("8");
 		btn8.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn8.setBounds(82, 230, 60, 60);
 		btn8.setBackground(Color.black);
 		btn8.setForeground(Color.decode("#7FFFE8"));
 		add(btn8);
-		
+
 		JButton btn5 = new JButton("5");
 		btn5.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn5.setBounds(82, 300, 60, 60);
 		btn5.setBackground(Color.black);
 		btn5.setForeground(Color.decode("#7FFFE8"));
 		add(btn5);
-		
+
 		JButton btn2 = new JButton("2");
 		btn2.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn2.setBounds(82, 370, 60, 60);
 		btn2.setBackground(Color.black);
 		btn2.setForeground(Color.decode("#7FFFE8"));
 		add(btn2);
-		
+
 		JButton btn0 = new JButton("0");
 		btn0.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn0.setBounds(82, 440, 60, 60);
 		btn0.setBackground(Color.black);
 		btn0.setForeground(Color.decode("#7FFFE8"));
 		add(btn0);
-		
-		//3er fila
-		
+
+		// 3er fila
+
 		JButton btn_parent = new JButton("( )");
 		btn_parent.setFont(new Font("Lemon Milk", Font.BOLD, 18));
 		btn_parent.setBounds(154, 160, 60, 60);
 		btn_parent.setBackground(Color.black);
 		btn_parent.setForeground(Color.decode("#7FFFE8"));
 		add(btn_parent);
-		
+
 		JButton btn9 = new JButton("9");
 		btn9.setFont(new Font("Lemon Milk", Font.BOLD, 18));
 		btn9.setBounds(154, 230, 60, 60);
 		btn9.setBackground(Color.black);
 		btn9.setForeground(Color.decode("#7FFFE8"));
 		add(btn9);
-		
+
 		JButton btn6 = new JButton("6");
 		btn6.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn6.setBounds(154, 300, 60, 60);
 		btn6.setBackground(Color.black);
 		btn6.setForeground(Color.decode("#7FFFE8"));
 		add(btn6);
-		
+
 		JButton btn3 = new JButton("3");
 		btn3.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btn3.setBounds(154, 370, 60, 60);
 		btn3.setBackground(Color.black);
 		btn3.setForeground(Color.decode("#7FFFE8"));
 		add(btn3);
-		
+
 		JButton btnDot = new JButton(".");
 		btnDot.setFont(new Font("Lemon Milk", Font.BOLD, 20));
 		btnDot.setBounds(154, 440, 60, 60);
 		btnDot.setBackground(Color.black);
 		btnDot.setForeground(Color.decode("#7FFFE8"));
 		add(btnDot);
-		
-		//4ta fila
-		
+
+		// 4ta fila
+
 		JButton btnMod = new JButton("%");
 		btnMod.setFont(new Font("Lemon Milk", Font.BOLD, 18));
 		btnMod.setBounds(226, 160, 60, 60);
 		btnMod.setBackground(Color.black);
 		btnMod.setForeground(Color.decode("#7FFFE8"));
 		add(btnMod);
-		
+
 		JButton btndiv = new JButton("÷");
 		btndiv.setFont(new Font("Lemon Milk", Font.BOLD, 18));
 		btndiv.setBounds(226, 230, 60, 60);
 		btndiv.setBackground(Color.black);
 		btndiv.setForeground(Color.decode("#7FFFE8"));
 		add(btndiv);
-		
+
 		JButton btnMulti = new JButton("x");
 		btnMulti.setFont(new Font("Lemon Milk", Font.BOLD, 18));
 		btnMulti.setBounds(226, 300, 60, 60);
 		btnMulti.setBackground(Color.black);
 		btnMulti.setForeground(Color.decode("#7FFFE8"));
 		add(btnMulti);
-		
+
 		JButton btnPlus = new JButton("+");
 		btnPlus.setFont(new Font("Lemon Milk", Font.BOLD, 18));
 		btnPlus.setBounds(226, 370, 60, 60);
 		btnPlus.setBackground(Color.black);
 		btnPlus.setForeground(Color.decode("#7FFFE8"));
 		add(btnPlus);
-		
+
 		JButton btnMinus = new JButton("-");
 		btnMinus.setFont(new Font("Lemon Milk", Font.BOLD, 30));
 		btnMinus.setBounds(226, 440, 60, 60);
 		btnMinus.setBackground(Color.black);
 		btnMinus.setForeground(Color.decode("#7FFFE8"));
 		add(btnMinus);
-		
-		JLabel operation = new JLabel("2 + 2 = 3",0);
+
+		JLabel operation = new JLabel("2 + 2 = 3", 0);
 		operation.setBounds(125, 55, 170, 120);
 		operation.setFont(new Font("Lemon Milk", Font.BOLD, 30));
 		operation.setForeground(Color.decode("#006565"));
 		add(operation);
-		
+
 		JPanel screen = new JPanel();
-		screen.setBounds(10,15,276,129);
+		screen.setBounds(10, 15, 276, 129);
 		screen.setBackground(Color.decode("#B0FF8E"));
 		add(screen);
-		
-		
+
 		JPanel fondo = new JPanel();
 		fondo.setSize(this.getWidth(), this.getHeight());
 		fondo.setBackground(Color.BLACK);
@@ -395,78 +396,115 @@ public void calculator() {
 	}
 
 	public void login_2() {
-		JLabel youreNew = new JLabel("Don't have a account?",0);
+		JLabel youreNew = new JLabel("Don't have a account?", 0);
 		youreNew.setBounds(200, 406, 280, 35);
 		youreNew.setForeground(Color.white);
 		youreNew.setFont(new Font("Segoe UI Black", Font.ITALIC, 12));
 		add(youreNew);
-		
+
 		JButton loginB = new JButton("Login");
 		loginB.setBounds(265, 339, 150, 50);
 		loginB.setBackground(Color.decode("#DCCA8A"));
 		loginB.setFont(new Font("Segoe UI Black", Font.ITALIC, 13));
 		add(loginB);
-		
+
 		JButton signUpB = new JButton("Sign Up");
 		signUpB.setBounds(290, 438, 100, 42);
 		signUpB.setBackground(Color.decode("#DCCA8A"));
 		signUpB.setFont(new Font("Segoe UI Black", Font.ITALIC, 13));
 		add(signUpB);
-		
+
 		JLabel person = new JLabel(new ImageIcon(getClass().getResource("person.png")));
 		person.setBounds(170, 210, 25, 25);
 		person.setBackground(Color.decode("#DCCA8A"));
 		person.setOpaque(true);
 		add(person);
-		
+
 		JLabel lock = new JLabel(new ImageIcon(getClass().getResource("lock.png")));
 		lock.setBounds(170, 295, 25, 25);
 		lock.setBackground(Color.decode("#DCCA8A"));
 		lock.setOpaque(true);
 		add(lock);
-		
-		JLabel password = new JLabel("Enter Your Password",0);
+
+		JLabel password = new JLabel("Enter Your Password", 0);
 		password.setBounds(125, 260, 280, 35);
 		password.setForeground(Color.white);
 		password.setFont(new Font("Segoe UI Black", Font.ITALIC, 12));
 		add(password);
-		
-		JLabel userName = new JLabel("Enter Your Username",0);
+
+		JLabel userName = new JLabel("Enter Your Username", 0);
 		userName.setBounds(125, 175, 280, 35);
 		userName.setForeground(Color.white);
 		userName.setFont(new Font("Segoe UI Black", Font.ITALIC, 12));
 		add(userName);
-		
+
 		JTextField userName_txt = new JTextField();
 		userName_txt.setBounds(200, 205, 280, 35);
 		add(userName_txt);
-		
+
 		JPasswordField pwr = new JPasswordField();
 		pwr.setBounds(200, 290, 280, 35);
 		add(pwr);
-		
-		JLabel userLogin = new JLabel("User Login",0);
+
+		JLabel userLogin = new JLabel("User Login", 0);
 		userLogin.setForeground(Color.white);
 		userLogin.setFont(new Font("Segoe UI Black", Font.ITALIC, 30));
 		userLogin.setBounds(190, 18, 300, 50);
 		add(userLogin);
-		
-		JLabel myAccount = new JLabel("My Account",0);
+
+		JLabel myAccount = new JLabel("My Account", 0);
 		myAccount.setForeground(Color.decode("#DCCA8A"));
 		myAccount.setFont(new Font("Segoe UI Black", Font.ITALIC, 40));
 		myAccount.setBounds(190, 108, 300, 50);
 		add(myAccount);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.decode("#3556A0"));
-		panel.setBounds(90,90,500,315);
+		panel.setBounds(90, 90, 500, 315);
 		add(panel);
-		
+
 		JPanel fondo = new JPanel();
 		fondo.setBackground(Color.decode("#3E64AE"));
 		fondo.setSize(this.getWidth(), this.getHeight());
 		add(fondo);
-		
+
+		repaint();
+	}
+
+	public void calculadora_layout() {
+
+		JPanel calcu = new JPanel();
+		calcu.setBackground(Color.black);
+		calcu.setLayout(new BorderLayout());
+		calcu.setBounds(0, 0, this.getWidth(), this.getHeight());
+
+		JLabel input = new JLabel("2+2", 0);
+		input.setOpaque(true);
+		calcu.add(input, BorderLayout.NORTH);
+
+		JPanel botones = new JPanel();
+		botones.setBackground(Color.red);
+		botones.setLayout(new GridLayout(4, 3));
+		calcu.add(botones, BorderLayout.CENTER);
+
+		String btn_texts[] = { "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "." };
+
+		for (int i = 0; i < btn_texts.length; i++) {
+			botones.add(new JButton(btn_texts[i]));
+		}
+
+		JPanel actions = new JPanel();
+		actions.setLayout(new GridLayout(6, 1));
+		actions.setBackground(Color.green);
+		calcu.add(actions, BorderLayout.EAST);
+
+		String actions_texts[] = { "+", "-", "*", "/", "=", "CE"};
+
+		for (int i = 0; i < actions_texts.length; i++) {
+			actions.add(new JButton(actions_texts[i]));
+		}
+
+		add(calcu);
 		repaint();
 	}
 }
